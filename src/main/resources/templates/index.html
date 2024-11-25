@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>뚜버기투어</title>
+</head>
+<body>
+  <div layout:fragment="content">
+    <!-- swiper slide -->
+    <section class="s1">
+      <div class="main-slide">
+        <div class="swiper swiper1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex">
+              <div class="slide-bg slide-bg1"></div>
+              <div class="slide-img slide-img1"></div>
+            </div>
+            <div class="swiper-slide flex">
+              <div class="slide-bg slide-bg2"></div>
+              <div class="slide-img slide-img2"></div>
+            </div>
+            <div class="swiper-slide flex">
+              <div class="slide-bg slide-bg3"></div>
+              <div class="slide-img slide-img3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-slide-txt">
+        <div class="swiper swiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex2">
+              <h2>출발확정 상품으로<br>걱정없이 떠나세요</h2>
+              <p>#장거리 여행 시즌 ON</p>
+            </div>
+            <div class="swiper-slide flex2">
+              <h2>아바타가<br>먼저 다녀와서 추천하는</h2>
+              <p>투어 아바타 IN 사이판 월드리조트</p>
+            </div>
+            <div class="swiper-slide flex2">
+              <h2>cruise<br>크루즈의 모든 것</h2>
+              <p>#나의 N번째 크루즈 여행<br>#아시아, 유럽, 미주, 대양주 어디든</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </section>
+
+    <section class="s2">
+      <div class="center-box">
+        <h2>MD 추천</h2>
+        <p>이번주 주목해야 하는 상품</p>
+        <div class="swiper swiper3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" th:each="item : ${tripItems1}">
+              <div class="swiper-slide-img">
+                <img th:src="${item.image}" th:alt="${item.title}">
+              </div>
+              <p th:text="${item.category2}"></p>
+              <h3 th:text="${item.title}"></h3>
+              <div class="swiper-slide-txt flex">
+                <p th:text="${item.category1}"></p>
+                <p th:text="${item.category3}"></p>
+              </div>
+              <p th:text="${item.lprice + '원'}"></p>
+              <a th:href="${item.link}">예약하기</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+
+
+
+
+    <section class="s3">
+      <div class="center-box">
+        <h2>최신정보</h2>
+        <div class="flex">
+          <div class="mega-sale">
+            <div class="swiper swiper4">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" th:each="item : ${tripItems2}">
+                  <div class="swiper-slide-img">
+                    <img th:src="${item.image}" th:alt="${item.title}">
+                  </div>
+                  <h3 th:text="${item.title}"></h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="notice">
+            <h3>공지사항</h3>
+            <div class="notice-box">
+              <table class="table">
+                <tr th:each="board : ${recentBoard}">
+                  <td>
+                    <b><a th:href="@{|/board/detail/${board.id}|}" th:text="${board.title}"></a></b>
+                  </td>
+                  <td>
+                    <span th:text="${#temporals.format(board.createdAt, 'yyyy.MM.dd')}"></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <hr>
+    <section class="s4">
+    <div class="center-box">
+      <h2>타임딜</h2>
+      <div class="time-deal">
+        <a href="#" class="flex">
+          <div class="time-deal-photo">
+            <img th:src="@{/img/time-deal.jpg}" alt="타임딜">
+          </div>
+          <div class="time-deal-txt">
+            <div class="d-day" id="d-day">
+
+            </div>
+            <div class="d-day-txt">
+              <h3>라오스 완전정복 with 최우수가이드</h3>
+              <span>#라오스 #방비엥 #비엔티엔 #루앙프라방 #라오스핵심일주 #라오스 우수가이드</span>
+              <span>메가세일 즉시할인 3만원+쿠폰할인 3만원+카드할인까지</span>
+              <h3>특가 469,900원 부터</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="time-deal-swiper">
+        <div class="swiper swiper5">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex" th:each="item : ${tripItems3}">
+              <div class="swiper-slide-img">
+                <img th:src="${item.image}" th:alt="${item.title}">
+              </div>
+              <div>
+                <span>D-3</span>
+                <h3 th:text="${item.title}"></h3>
+                <p th:text="${'특가 ' + item.lprice + '원부터'}"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    </section>
+  </div>
+<script layout:fragment="script" type="text/javascript">
+  let targetDate = new Date("12 25, 2024 24:00:00").getTime();
+  //1초마다 함수 생성, 실행
+  let x = setInterval(function(){
+    //현재 날짜 구하기
+    let now = new Date().getTime();
+    //타겟 날짜에서 현재 날짜를 뺀 시간 구하기
+    let distance = targetDate - now;
+    //각 변수에 일, 시, 분, 초를 등록
+    let day = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hour = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60 ));
+    let minute = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+    let second = Math.floor(distance % (1000 * 60) / 1000);
+
+    //만약 day가 0이면 "당일"임
+    day = day ===0 ? "당일" : day.toString().padStart(2,"0");
+    hour = hour.toString().padStart(2, "0");
+    minute = minute.toString().padStart(2, "0");
+    second = second.toString().padStart(2, "0");
+    //화면에 표시
+    document.getElementById("d-day").innerHTML = "<b>" + day + "</b>일 <b>" + hour + " : " + minute + " : " + second + "</b> 남았습니다.";
+  });
+</script>
+</body>
+</html>
