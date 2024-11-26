@@ -26,7 +26,7 @@ public class NaverSearch {
         headers.add("X-Naver-Client-Secret",clientSecret);
         //HttpEntity : HttpHeader정보 + HttpBody정보
         HttpEntity<String> requestEntity = new HttpEntity<>("", headers);
-        String apiURL = "https://openapi.naver.com/v1/search/shop.json?query=" + query;
+        String apiURL = "https://openapi.naver.com/v1/search/shop.json?query=" + query +"&display=16";
         //ResponseEntity : HttpEntity로 요청한 데이터(HttpHeader + HttpBody)를 포함하고, HttpRequest에 대한 응답 데이터를 포함하는 클래스
         ResponseEntity<String> responseEntity = rest.exchange(apiURL, HttpMethod.GET, requestEntity, String.class);
         return responseEntity.getBody();

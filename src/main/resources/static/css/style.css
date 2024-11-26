@@ -260,4 +260,123 @@ section { width:100%; margin-top:130px; }
 .s4 .time-deal-swiper {
     position:relative;
 }
-
+.s5 .swiper6 {
+    width:100%;
+    margin-top:50px;
+}
+.s5 .swiper6 .swiper-slide img{
+    transform:scale(0.8,0.8);
+    transition:transform 0.5s;
+}
+.s5 .swiper6 .swiper-slide-active img {
+    transform:scale(1,1);
+}
+.s5 .swiper6 .swiper-slide p {
+    font-size:14px;
+    font-weight:bold;
+    white-space:normal;
+    margin-top:20px;
+}
+.s6 .home-shopping {
+    display:grid;
+    grid-template-rows:repeat(2, 1fr);
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    width:100%;
+    height:480px;
+    overflow:hidden;
+}
+.s6 .home-shopping .shop{
+    position:relative;
+    border-radius:16px;
+    cursor:pointer;
+    overflow:hidden;
+}
+.s6 .home-shopping .shop .shop-img{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.s6 .home-shopping .shop .hover {
+    position:absolute;
+    background-color:rgba(0, 112, 192, 0.5);
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 0.3s;
+}
+.s6 .home-shopping .shop .hover a {
+    height:100%;
+    color:#fff;
+    padding:30px;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:flex-start;
+    justify-content:center;
+}
+.s6 .home-shopping .shop:hover .hover {
+    opacity:1;
+}
+.s6 .home-shopping .shop:first-child {
+    grid-row-start:1;
+    grid-row-end:3;
+}
+footer {
+    margin-top:130px;
+    font-size:14px;
+    color:#666;
+}
+footer ul {
+    gap:20px;
+}
+footer a {
+    font-size:14px;
+    color:#666;
+}
+footer .info {
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding:12px 0;
+}
+footer .addr {
+    padding:30px 0;
+}
+footer .addr .flex {
+    align-items:flex-start;
+}
+footer .addr .sns ul li img {
+    width:25px;
+    height:25px;
+}
+/* 패밀리 사이트 */
+footer .info .family {
+    position:relative;
+    border:1px solid #999;
+    padding:7px 12px;
+    width:173px;
+    height:40px;
+    border-radius:6px;
+}
+footer .info .family a p{
+    font-size:14px;
+    margin-bottom:0;
+}
+footer .info .family a i {
+    display:block;
+}
+footer .info .family a i.active {
+    transform:rotateZ(-180deg);
+    transition:transform 0.3s;
+}
+footer .info .family .family-list {
+    position:absolute;
+    left:0;
+    bottom:46px;
+    padding:7px;
+    border:1px solid #ccc;
+    background-color:#fff;
+    display:none;
+}
+footer .info .family .family-list a {
+    padding:5px;
+}

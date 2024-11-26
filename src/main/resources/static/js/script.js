@@ -87,4 +87,17 @@ $(function(){
             nextEl:".s4 .swiper-button-next"
         }
     });
+    //.s5 swiper slide
+    let swiper6 = new Swiper(".swiper6", {
+        loop:true,
+        slidesPerView:5,
+        centeredSlides:true,
+        spaceBetween:30
+    });
+    //footer family site
+    $(".family > a").click(function(e){
+        e.preventDefault();
+        $(".family-list").slideToggle();
+        $(this).find("i").toggleClass("active");
+    })
 });

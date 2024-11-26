@@ -158,6 +158,108 @@
       </div>
     </div>
     </section>
+    <section class="s5">
+      <div class="center-box">
+        <h2>지금 투어에서는</h2>
+        <div class="swiper swiper6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now1.png}" alt="반값 할인 이벤트">
+                <br>
+                <p>[수험생 단독 혜택]반값 할인 이벤트</p>
+              </a>
+            </div><!-- slide1 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now2.png}" alt="5%할인쿠폰">
+                <br>
+                <p>[전세계호텔]5%할인쿠폰</p>
+              </a>
+            </div><!-- slide2 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now3.png}" alt="무료숙박응모권">
+                <br>
+                <p>[이벤트]무료숙박응모권</p>
+              </a>
+            </div><!-- slide3 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now4.png}" alt="기대평이벤트">
+                <br>
+                <p>영화 [대가족] 기대평이벤트</p>
+              </a>
+            </div><!-- slide4 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now5.png}" alt="월드리조트혜택">
+                <br>
+                <p>[사이판]월드리조트혜택</p>
+              </a>
+            </div><!-- slide5 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now1.png}" alt="반값 할인 이벤트">
+                <br>
+                <p>[수험생 단독 혜택]반값 할인 이벤트</p>
+              </a>
+            </div><!-- slide1 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now2.png}" alt="5%할인쿠폰">
+                <br>
+                <p>[전세계호텔]5%할인쿠폰</p>
+              </a>
+            </div><!-- slide2 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now3.png}" alt="무료숙박응모권">
+                <br>
+                <p>[이벤트]무료숙박응모권</p>
+              </a>
+            </div><!-- slide3 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now4.png}" alt="기대평이벤트">
+                <br>
+                <p>영화 [대가족] 기대평이벤트</p>
+              </a>
+            </div><!-- slide4 -->
+            <div class="swiper-slide">
+              <a href="#">
+                <img th:src="@{/img/now5.png}" alt="월드리조트혜택">
+                <br>
+                <p>[사이판]월드리조트혜택</p>
+              </a>
+            </div><!-- slide5 -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="s6">
+      <div class="center-box">
+        <h2>홈쇼핑 HIT 상품</h2>
+        <div class="home-shopping">
+         <div th:each="item : ${tripItems4}" class="shop">
+           <div class="shop-img">
+             <img th:src="${item.image}" th:alt="${item.title}">
+           </div>
+           <div class="hover">
+             <a href="#">
+              <h3 th:text="${item.title}"></h3>
+              <div>
+                #<span th:text="${item.category1}"></span>
+                #<span th:text="${item.category2}"></span>
+                #<span th:text="${item.category3}"></span>
+              </div>
+              <p th:text="${item.lprice + '원부터 ~'}"></p>
+             </a>
+           </div>
+         </div>
+        </div>
+      </div>
+    </section>
   </div>
 <script layout:fragment="script" type="text/javascript">
   let targetDate = new Date("12 25, 2024 24:00:00").getTime();
